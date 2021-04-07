@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import TableExample1 from "./component/TableExample1";
+import TableExample2 from "./component/TableExample2";
+import usePageTitle from "./hooks/usePageTitle";
+import { BootstrapBreakpointProvider } from "./hooks/useBootstrapBreakpoint";
+import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
 
-function App() {
+const App = () => {
+  usePageTitle("Juv Table");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BootstrapBreakpointProvider>
+      <Container fluid>
+        <Row className="mt-4">
+          <Col>
+            <Tabs id="juvTable">
+              <Tab eventKey="example1" title="Holdings">
+                <TableExample1 />
+              </Tab>
+              <Tab eventKey="example2" title="Truncations">
+                <TableExample2 />
+              </Tab>
+            </Tabs>
+          </Col>
+        </Row>
+      </Container>
+    </BootstrapBreakpointProvider>
   );
-}
+};
 
 export default App;

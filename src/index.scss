@@ -1,0 +1,54 @@
+@import "~bootstrap/scss/bootstrap";
+
+$blue: #107ba1;
+$red: #912323;
+$gray-175: #edeff2;
+$gray-400: #ced4da;
+$gray-900: #212529;
+$link-color: $blue;
+$link-hover-decoration: none;
+$link-hover-color: darken($link-color, 20%);
+
+// Make text look like a link
+.text-link {
+  color: $link-color !important;
+  cursor: pointer;
+  &:hover {
+    color: $link-hover-color !important;
+  }
+}
+a:hover .text-link {
+  color: $link-hover-color !important;
+}
+
+th .resizer {
+  display: inline-block;
+  background: $gray-400;
+  width: 5px;
+  height: 65%;
+  position: absolute;
+  right: -1px;
+  top: 20%;
+  transform: translateX(50%);
+  z-index: 1;
+
+  touch-action: none;
+  user-select: none;
+  &:hover {
+    background: $gray-900;
+  }
+  &.isResizing {
+    background: $red;
+  }
+}
+
+.header {
+  background: $gray-175;
+}
+
+.header .cell {
+  font-size: 1.075rem;
+  line-height: 1.2;
+  font-weight: 500 !important;
+  padding-bottom: 0.25rem;
+}
