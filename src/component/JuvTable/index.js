@@ -163,7 +163,7 @@ const JuvTable = ({ data = [], columns = [], loading = false }) => {
         </tbody>
       </Table>
       {pageCount > 1 && (
-        <div className="pagination mt-4 d-flex">
+        <div className="pagination my-4 d-flex">
           <Icon
             onClick={() => gotoPage(0)}
             icon={goToFirstPageIcon}
